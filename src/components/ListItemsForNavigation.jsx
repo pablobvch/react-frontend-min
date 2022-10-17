@@ -69,9 +69,6 @@ export function ListItemsForNavigation(props) {
           })}
         </ul>
       ) : null}
-      <button className="btn btn-primary" type="submit">
-        Submit
-      </button>
     </>
   );
 }

@@ -17,7 +17,8 @@ ul {
   font-weight: 500;
 }
 
-.passenger-list{
+.passenger-list,
+.grocery-list{
   padding-left: 0px;
 }
 

@@ -36,30 +36,36 @@ const getProductsUpdated = (prevProductsState, product, value) => {
   return newPrevProductsState;
 };
 
+const handlePlus = (setProductsState, product) => {
+  // logic to vote a product
+  setProductsState((prevProductsState) =>
+    getProductsUpdated(prevProductsState, product, 1)
+  );
+};
+
+const handleMinus = (setProductsState, product) => {
+  // logic to unvote a product
+  setProductsState((prevProductsState) =>
+    getProductsUpdated(prevProductsState, product, -1)
+  );
+};
+
 function Product({ product, setProductsState }) {
-  function handlePlus() {
-    // logic to vote a product
-    setProductsState((prevProductsState) =>
-      getProductsUpdated(prevProductsState, product, 1)
-    );
-  }
-
-  function handleMinus() {
-    // logic to unvote a product
-    setProductsState((prevProductsState) =>
-      getProductsUpdated(prevProductsState, product, -1)
-    );
-  }
-
   return (
     <li>
       <span>
         {product.name} - votes: {product.votes}
       </span>
-      <button className="btn" onClick={handlePlus}>
+      <button
+        className="btn"
+        onClick={() => handlePlus(setProductsState, product)}
+      >
         <span>+</span>
       </button>
-      <button className="btn" onClick={handleMinus}>
+      <button
+        className="btn"
+        onClick={() => handleMinus(setProductsState, product)}
+      >
         <span>-</span>
       </button>
     </li>
@@ -78,5 +84,9 @@ const renderProducts = (productsState, setProductsState) =>
 export function Grocery({ products }) {
   const [productsState, setProductsState] = useState(products);
 
-  return <ul>{renderProducts(productsState, setProductsState)}</ul>;
+  return (
+    <ul className="grocery-list">
+      {renderProducts(productsState, setProductsState)}
+    </ul>
+  );
 }

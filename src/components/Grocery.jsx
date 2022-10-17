@@ -57,13 +57,13 @@ function Product({ product, setProductsState }) {
         {product.name} - votes: {product.votes}
       </span>
       <button
-        className="btn"
+        className="btn btn-primary btn-product"
         onClick={() => handlePlus(setProductsState, product)}
       >
         <span>+</span>
       </button>
       <button
-        className="btn"
+        className="btn btn-primary btn-product"
         onClick={() => handleMinus(setProductsState, product)}
       >
         <span>-</span>

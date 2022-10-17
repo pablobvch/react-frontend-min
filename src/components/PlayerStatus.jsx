@@ -38,7 +38,9 @@ export function PlayerStatus() {
     <div>
       <h1>{`Status: ${status}`}</h1>
       <h3>{`Counter: ${counter}`}</h3>
-      <button onClick={() => onToggleStatus()}>Toggle status</button>
+      <button className="btn btn-primary" onClick={() => onToggleStatus()}>
+        Toggle status
+      </button>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { ListItemsForNavigation } from "../components/ListItemsForNavigation";
 
 export const ListItemsForNavigationPage = () => {
   return (
-    <ContainerPage title={"Image Gallery Page"}>
+    <ContainerPage title={"List Items Page"}>
       <ListItemsForNavigation />
     </ContainerPage>
   );

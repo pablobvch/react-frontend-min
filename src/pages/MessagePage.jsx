@@ -4,7 +4,7 @@ import { Message } from "../components/Message";
 
 export const MessagePage = () => {
   return (
-    <ContainerPage title={"Image Gallery Page"}>
+    <ContainerPage title={"Message Page"}>
       <Message />
     </ContainerPage>
   );

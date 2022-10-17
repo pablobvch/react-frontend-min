@@ -18,6 +18,11 @@ const itemsList = Array(10).fill({
   /** Add the properties you consider, there are no specific requirements related to what you have to render. Be creative :) */
 });
 
+const arrowLeft = 37;
+const arrowUp = 38;
+const arrowRight = 39;
+const arrowDown = 40;
+
 export function ListItemsForNavigation(props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -33,13 +38,13 @@ export function ListItemsForNavigation(props) {
 
   const handleKeyDown = (event) => {
     // Add the proper logic to calculate the index that correspond to the item that should be focused.
-    if (event.keyCode === 39 || event.keyCode === 40) {
-      if (selectedIndex + 1 < 10) {
+    if (event.keyCode === arrowRight || event.keyCode === arrowDown) {
+      if (selectedIndex + 1 < itemsList.length) {
         setSelectedIndex((prevSelectedIndex) => prevSelectedIndex + 1);
       }
       return;
     }
-    if (event.keyCode === 37 || event.keyCode === 38) {
+    if (event.keyCode === arrowLeft || event.keyCode === arrowUp) {
       if (selectedIndex - 1 >= 0) {
         setSelectedIndex((prevSelectedIndex) => prevSelectedIndex - 1);
       }
@@ -49,11 +54,12 @@ export function ListItemsForNavigation(props) {
 
   return (
     <>
+      <h4>Complete the names of the involved passengers in the accident</h4>
       {itemsList.length > 0 ? (
-        <ul onKeyDown={handleKeyDown}>
+        <ul className="passenger-list" onKeyDown={handleKeyDown}>
           {itemsList.map((item, index) => {
             return (
-              <li key={index}>
+              <li className="pb-1" key={index}>
                 <input
                   type="text"
                   ref={index === selectedIndex ? activeItemRef : null}
@@ -63,6 +69,9 @@ export function ListItemsForNavigation(props) {
           })}
         </ul>
       ) : null}
+      <button className="btn btn-primary" type="submit">
+        Submit
+      </button>
     </>
   );
 }

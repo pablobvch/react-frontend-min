@@ -14,7 +14,7 @@ export const FocusableInputPage = () => {
         {/* Comment and uncomment the focused prop to observe the behaviour */}
         <FocusableInput focused={focused} />
         <button
-          className="btn btn-primary"
+          className="btn btn-primary btn-focused"
           onClick={() => handleClick(focused, setFocused)}
         >
           {`Set focus: ${focused}`}

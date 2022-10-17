@@ -10,9 +10,9 @@ import { useState } from "react";
 
 function Image({ src, onRemove }) {
   return (
-    <div className="image">
-      <img src={src} alt={`img from ${src}`} />
-      <button className="remove" onClick={() => onRemove(src)}>
+    <div className="image-container">
+      <img className="img-thumbnail" src={src} alt={`img from ${src}`} />
+      <button className="btn btn-danger remove" onClick={() => onRemove(src)}>
         X
       </button>
     </div>
@@ -33,10 +33,32 @@ const onRemove = (stateLinks, setStateLinks) => (link) => {
   setStateLinks(filteredLinksList);
 };
 
+const renderPlaceHolder = (setStateLinks, links) => {
+  return (
+    <>
+      <div>There are no images to show</div>
+      <button
+        className="btn btn-primary btn-reset"
+        onClick={() => {
+          setStateLinks(links);
+        }}
+      >
+        Reset
+      </button>
+    </>
+  );
+};
+
 export function ImageGallery({ links }) {
   const [stateLinks, setStateLinks] = useState(links);
 
+  if (stateLinks?.length === 0) {
+    return renderPlaceHolder(setStateLinks, links);
+  }
+
   return (
-    <div>{renderImages(stateLinks, onRemove(stateLinks, setStateLinks))}</div>
+    <div className="row rows-cols-1 row-cols-md-3 g-3">
+      {renderImages(stateLinks, onRemove(stateLinks, setStateLinks))}
+    </div>
   );
 }

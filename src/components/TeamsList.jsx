@@ -15,16 +15,16 @@ import { TEAMS } from "../data/teams";
 
 const quantityFilteredPlayers = 3;
 
-const reducerScore = (accumulator, current) => accumulator + current.score;
-
-const getTotalScore = (games) => games.reduce(reducerScore, 0);
-
 const renderTeams = (teams) =>
   teams.map((team) => (
     <li key={team.name}>{`${team.name} - ${
       team.players.length
     } - ${getTotalScore(team.games)}`}</li>
   ));
+
+const reducerScore = (accumulator, current) => accumulator + current.score;
+
+const getTotalScore = (games) => games.reduce(reducerScore, 0);
 
 export function TeamsList() {
   const [teams, setTeams] = useState(TEAMS);
@@ -55,17 +55,31 @@ export function TeamsList() {
 
   return (
     <div>
-      <button onClick={() => setTeams(TEAMS)}>Initial list</button>
+      <button
+        className="btn btn-primary btn-teams-list"
+        onClick={() => setTeams(TEAMS)}
+      >
+        Initial list
+      </button>
 
-      <button onClick={() => orderTeamByScoreHighestToLowest()}>
+      <button
+        className="btn btn-primary btn-teams-list"
+        onClick={() => orderTeamByScoreHighestToLowest()}
+      >
         Highest to Lowest
       </button>
 
-      <button onClick={() => orderTeamByScoreLowestToHighest()}>
+      <button
+        className="btn btn-primary btn-teams-list"
+        onClick={() => orderTeamByScoreLowestToHighest()}
+      >
         Lowest to Highest
       </button>
 
-      <button onClick={() => teamsWithMoreThanThreePlayers()}>
+      <button
+        className="btn btn-primary"
+        onClick={() => teamsWithMoreThanThreePlayers()}
+      >
         Teams with at least 3 players
       </button>
 

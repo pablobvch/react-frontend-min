@@ -26,24 +26,26 @@
 
 import { useState } from "react";
 
+const handleClick = (n, setStars) => {
+  setStars((prevStars) => {
+    const newStarts = [...prevStars];
+    for (let i = 0; i <= newStarts.length - 1; i++) {
+      if (i <= n) {
+        newStarts[i] = 1;
+      } else {
+        newStarts[i] = 0;
+      }
+    }
+    return newStarts;
+  });
+};
+
 const starsArray = [0, 1, 2, 3, 4];
 
-export function Rating() {
-  const [stars, setStars] = useState([0, 0, 0, 0, 0]);
+const initialState = [0, 0, 0, 0, 0];
 
-  const handleClick = (n) => {
-    setStars((prevStars) => {
-      const newStarts = [...prevStars];
-      for (let i = 0; i <= newStarts.length - 1; i++) {
-        if (i <= n) {
-          newStarts[i] = 1;
-        } else {
-          newStarts[i] = 0;
-        }
-      }
-      return newStarts;
-    });
-  };
+export function Rating() {
+  const [stars, setStars] = useState(initialState);
 
   return (
     <div id="rating">
@@ -51,7 +53,7 @@ export function Rating() {
         <span
           key={n}
           className={`span-star ${stars[n] !== 0 ? "span-bold" : ""}`}
-          onClick={() => handleClick(n)}
+          onClick={() => handleClick(n, setStars)}
         >
           *
         </span>

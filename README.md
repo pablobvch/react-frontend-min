@@ -1,4 +1,4 @@
-# Minutentag Tests Challenge
+# React Tests Challenge
 
 ## Introduction
 

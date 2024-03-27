@@ -1,19 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-All documentation related with Create React App apply to this project and can be used in term of running it.
+# Minutentag Tests Challenge
 
-## Url Website
+## Introduction
 
-The website has been deployed on the following url from [Netlify](https://react-frontend-min.netlify.app/)
+This repository contains a web development challenge created for a company's coding challenge. The goal is to refactor and enhance existing components to demonstrate programming and design skills.
 
-## Tests and Components
+## Project Location
 
-In this project you will find `/src/components/` directory. Devs are going to find components there and Each of them represents a test.
-In the comments at the top of each file the dev will find requirements in order to fill and finish the tests.
-Each team member can clone this project and refactor the components in order to deliver a good quality code.
+The website has been deployed on [Netlify](https://react-frontend-min.netlify.app/). You can access the challenge through the following URL:
 
-The solution is not only `one`, please be creative ;).
+- [https://react-frontend-min.netlify.app/](https://react-frontend-min.netlify.app/)
 
-NOTE: Please, do not push any change here. This is a Read-only project. Each solution may be pushed in the personal Minutentag Bitbucked account.
+## Challenge Overview
+
+The project is located in the `/src/components/` directory. Here, developers will find a series of components, each representing a test. The requirements to complete each test are found in the comments at the top of each file.
+
+Anyone interested in the challenge can clone this project and begin refactoring the components. The goal is to improve code quality and, if possible, create innovative solutions. Remember that there are more than one valid solution to this challenge. Encouraged participants to be creative and explore different approaches. If you find any issues or have suggestions for improving the project, feel free to open an issue or submit a pull request.
+
+## Development Environment
+
+- **Node.js Version**: This project has been tested and works with Node.js version 16. It is recommended to use this version to avoid compatibility issues.
 
 ## Available Scripts
 
@@ -22,5 +27,3 @@ In the project directory, you can run at least:
 ### `npm start`
 
 Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits. You will also see any lint errors in the console.
